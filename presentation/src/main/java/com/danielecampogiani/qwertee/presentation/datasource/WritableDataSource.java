@@ -5,5 +5,7 @@ import com.danielecampogiani.qwertee.presentation.data.TShirt;
 
 public interface WritableDataSource extends DataSource {
 
-    void write(TShirt[] toBeSaved);
+    void writeDailyDeals(TShirt[] toBeSaved);
+
+    void writeAll(TShirt[] toBeSaved);
 }
