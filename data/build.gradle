@@ -1,5 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'jacoco'
 
 test {
     testLogging {
@@ -9,9 +8,11 @@ test {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-
-    compile 'io.reactivex:rxjava:1.1.3'
-
+    compile project(':presentation')
+    compile 'com.squareup.retrofit2:retrofit:2.0.1'
+    compile 'com.squareup.retrofit2:converter-simplexml:2.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+    compile 'org.jsoup:jsoup:1.8.3'
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:2.4.1'
 }
