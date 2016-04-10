@@ -16,6 +16,7 @@ before_script:
 
 script:
     - ./gradlew test
+    - ./gradlew testReleaseUnitTestCoverage
     - ./gradlew assembleDebug
 
 after_success:
