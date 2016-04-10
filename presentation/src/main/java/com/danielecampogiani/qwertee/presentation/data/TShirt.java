@@ -4,15 +4,16 @@ public class TShirt {
 
     private final String title;
     private final String description;
-    private final String id;
+    private final int id;
     private final int price;
 
-    public TShirt(String title, String description, String id, int price) {
+    public TShirt(String title, String description, int id, int price) {
 
-        if(price<=0){
+        if (price <= 0) {
             throw new IllegalArgumentException("Price must be >0");
         }
         this.price = price;
+        this.id = id;
 
         if (title != null)
             this.title = title;
@@ -23,11 +24,6 @@ public class TShirt {
             this.description = description;
         else
             this.description = "";
-
-        if (id != null)
-            this.id = id;
-        else
-            this.id = "";
     }
 
     public String getTitle() {
@@ -38,7 +34,7 @@ public class TShirt {
         return description;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -55,7 +51,7 @@ public class TShirt {
 
         TShirt tShirt = (TShirt) o;
 
-        return price == tShirt.price && title.equals(tShirt.title) && description.equals(tShirt.description) && id.equals(tShirt.id);
+        return id == tShirt.id && price == tShirt.price && (title.equals(tShirt.title));
 
     }
 
@@ -63,18 +59,8 @@ public class TShirt {
     public int hashCode() {
         int result = title.hashCode();
         result = 31 * result + (description.hashCode());
-        result = 31 * result + (id.hashCode());
+        result = 31 * result + id;
         result = 31 * result + price;
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "TShirt{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", id='" + id + '\'' +
-                ", price=" + price +
-                '}';
     }
 }
