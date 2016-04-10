@@ -1,6 +1,12 @@
 apply plugin: 'java'
 apply plugin: 'jacoco'
 
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 

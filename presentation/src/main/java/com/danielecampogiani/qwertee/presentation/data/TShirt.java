@@ -9,6 +9,11 @@ public class TShirt {
 
     public TShirt(String title, String description, String id, int price) {
 
+        if(price<=0){
+            throw new IllegalArgumentException("Price must be >0");
+        }
+        this.price = price;
+
         if (title != null)
             this.title = title;
         else
@@ -23,8 +28,6 @@ public class TShirt {
             this.id = id;
         else
             this.id = "";
-
-        this.price = price;
     }
 
     public String getTitle() {
@@ -52,21 +55,15 @@ public class TShirt {
 
         TShirt tShirt = (TShirt) o;
 
-        if (price != tShirt.price)
-            return false;
-        if (title != null ? !title.equals(tShirt.title) : tShirt.title != null)
-            return false;
-        if (description != null ? !description.equals(tShirt.description) : tShirt.description != null)
-            return false;
-        return id != null ? id.equals(tShirt.id) : tShirt.id == null;
+        return price == tShirt.price && title.equals(tShirt.title) && description.equals(tShirt.description) && id.equals(tShirt.id);
 
     }
 
     @Override
     public int hashCode() {
-        int result = title != null ? title.hashCode() : 0;
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (id != null ? id.hashCode() : 0);
+        int result = title.hashCode();
+        result = 31 * result + (description.hashCode());
+        result = 31 * result + (id.hashCode());
         result = 31 * result + price;
         return result;
     }
