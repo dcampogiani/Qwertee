@@ -1,21 +1,19 @@
-package com.danielecampogiani.qwertee.data.local.model;
-
-import java.util.Date;
+package com.danielecampogiani.qwertee.data.local.model.realm;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
-public class DayCache extends RealmObject {
+public class RealmDayCache extends RealmObject {
 
-    private Date day;
+    private RealmSimpleDay day;
     private RealmList<RealmTShirt> dailyDeals;
     private RealmList<RealmTShirt> all;
 
-    public Date getDay() {
+    public RealmSimpleDay getDay() {
         return day;
     }
 
-    public void setDay(Date day) {
+    public void setDay(RealmSimpleDay day) {
         this.day = day;
     }
 

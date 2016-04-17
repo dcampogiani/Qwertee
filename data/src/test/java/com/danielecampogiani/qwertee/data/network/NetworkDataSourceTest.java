@@ -7,6 +7,7 @@ import com.danielecampogiani.qwertee.data.network.retrofit.RetrofitQwertee;
 import com.danielecampogiani.qwertee.presentation.data.TShirt;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import retrofit2.Retrofit;
@@ -15,7 +16,7 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
-
+@Ignore
 public class NetworkDataSourceTest {
 
     private RetrofitQwertee retrofitQwertee;

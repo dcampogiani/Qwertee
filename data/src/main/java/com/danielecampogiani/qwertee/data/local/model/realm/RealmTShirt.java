@@ -1,11 +1,13 @@
-package com.danielecampogiani.qwertee.data.local.model;
+package com.danielecampogiani.qwertee.data.local.model.realm;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
-public class RealmTShirt extends RealmObject{
+public class RealmTShirt extends RealmObject {
 
     private String title;
     private String description;
+    @PrimaryKey
     private int id;
     private int price;
 
